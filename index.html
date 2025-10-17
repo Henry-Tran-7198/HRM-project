@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Human Resource Management App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Phần Login / Login Section -->
+    <div id="login-container" class="auth-container">
+      <h2>Login</h2>
+      <form id="login-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" required />
+        <label for="password">Password:</label>
+        <input type="password" id="password" required />
+        <button type="submit">Login</button>
+      </form>
+      <p>Chưa có tài khoản? <span id="show-register">Register</span></p>
+    </div>
+
+    <!-- Phần Register / Register Section -->
+    <div id="register-container" class="auth-container" style="display: none">
+      <h2>Đăng Ký / Register</h2>
+      <form id="register-form">
+        <label for="username_register">Username:</label>
+        <input type="text" id="username_register" required />
+        <label for="email_register">Email:</label>
+        <input type="email" id="email_register" required />
+        <label for="password_register">Password:</label>
+        <input type="password" id="password_register" required />
+        <label for="password_confirmation">Confirm Password:</label>
+        <input type="password" id="password_confirmation" required />
+        <button type="submit">Register</button>
+      </form>
+      <p>Đã có tài khoản? <span id="show-login">Login</span></p>
+    </div>
+
+    <!-- Dashboard Chính / Main Dashboard -->
+    <div id="dashboard" class="dashboard" style="display: none">
+      <!-- Sidebar Menu / Menu Điều Hướng -->
+      <aside id="sidebar">
+        <h3>Menu HRM</h3>
+        <ul>
+          <li id="employees" data-module="employees">Employees</li>
+          <li data-module="departments">Departments</li>
+          <li data-module="positions">Positions</li>
+          <li data-module="salary">Salary</li>
+          <li data-module="attendance">Attendance</li>
+          <li data-module="leave">Leave</li>
+          <li data-module="performance">Performance</li>
+          <li id="logoutBtn">Logout</li>
+        </ul>
+      </aside>
+
+      <!-- Nội Dung Chính / Main Content Area -->
+      <main id="main-content">
+        <h2 id="module-title">Welcome</h2>
+        <p>Select a module from the menu.</p>
+
+        <!-- Container cho List Nhân Viên (mẫu) / Container for Employee List (example) -->
+        <div
+          id="employees-section"
+          class="module-section"
+          style="display: none"
+        >
+          <button id="add-employee-btn">Add Employee</button>
+          <table id="employees-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Salary</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- JS sẽ fill rows ở đây / JS will fill rows here -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Các section khác sẽ thêm tương tự / Other sections similar -->
+        <!-- Ví dụ: departments-section, positions-section, v.v. -->
+
+        <!-- Form Thêm/Sửa Nhân Viên (ẩn ban đầu) / Add/Edit Employee Form (hidden initially) -->
+        <div id="employee-form-container" style="display: none">
+          <form id="employee-form">
+            <h3 id="form-title">Add Employee</h3>
+            <label for="emp-name">Name:</label>
+            <input type="text" id="emp-name" required />
+            <!-- Thêm các input khác: department select, salary, etc. -->
+            <button type="submit">Save</button>
+            <button type="button" id="cancel-form">Cancel</button>
+          </form>
+        </div>
+      </main>
+    </div>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
