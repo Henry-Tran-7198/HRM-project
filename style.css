@@ -49,6 +49,22 @@ button:hover {
   background-color: #0056b3;
 }
 
+/* Thêm kiểu cho nút Cancel màu đỏ / Add style for Cancel button in red */
+.cancel-button {
+  background-color: red;
+  margin-top: 10px; /* Cách nút Save một chút / Add some space from Save button */
+}
+
+.cancel-button:hover {
+  background-color: #cc0000; /* Màu đỏ đậm hơn khi hover / Darker red on hover */
+}
+
+/* Đảm bảo nút Cancel có màu trắng cho chữ / Ensure Cancel button has white text */
+.cancel-button,
+.cancel-button:hover {
+  color: white;
+}
+
 .dashboard {
   display: flex;
   width: 100%;
@@ -91,7 +107,8 @@ table {
   margin-top: 20px;
 }
 
-th, td {
+th,
+td {
   border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
@@ -107,6 +124,18 @@ th {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Thêm kiểu cho nút Delete trong bảng / Add style for Delete button in table */
+button.delete-button {
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
+  margin-right: 10px; /* Khoảng cách giữa Edit và Delete / Spacing between Edit and Delete */
+}
+
+button.delete-button:hover {
+  background-color: #cc0000; /* Màu đỏ đậm hơn khi hover / Darker red on hover */
 }
 
 /* Responsive */

@@ -17,12 +17,15 @@
         <input type="password" id="password" required />
         <button type="submit">Login</button>
       </form>
-      <p>Chưa có tài khoản? <span id="show-register">Register</span></p>
+      <p>
+        Don't you have an account ?
+        <span id="show-register"><button>Register</button></span>
+      </p>
     </div>
 
     <!-- Phần Register / Register Section -->
     <div id="register-container" class="auth-container" style="display: none">
-      <h2>Đăng Ký / Register</h2>
+      <h2>Register</h2>
       <form id="register-form">
         <label for="username_register">Username:</label>
         <input type="text" id="username_register" required />
@@ -34,7 +37,10 @@
         <input type="password" id="password_confirmation" required />
         <button type="submit">Register</button>
       </form>
-      <p>Đã có tài khoản? <span id="show-login">Login</span></p>
+      <p>
+        Do you already have an account ?
+        <span id="show-login"><button>Login</button></span>
+      </p>
     </div>
 
     <!-- Dashboard Chính / Main Dashboard -->
@@ -56,8 +62,7 @@
 
       <!-- Nội Dung Chính / Main Content Area -->
       <main id="main-content">
-        <h2 id="module-title">Welcome</h2>
-        <p>Select a module from the menu.</p>
+        <h2 id="module-title">Welcome HRM Application</h2>
 
         <!-- Container cho List Nhân Viên (mẫu) / Container for Employee List (example) -->
         <div
@@ -72,6 +77,7 @@
                 <th>ID</th>
                 <th>Name</th>
                 <th>Department</th>
+                <th>Position</th>
                 <th>Salary</th>
                 <th>Actions</th>
               </tr>
@@ -86,16 +92,45 @@
         <!-- Ví dụ: departments-section, positions-section, v.v. -->
 
         <!-- Form Thêm/Sửa Nhân Viên (ẩn ban đầu) / Add/Edit Employee Form (hidden initially) -->
+        <!-- Form Thêm/Sửa Nhân Viên (ẩn ban đầu) / Add/Edit Employee Form (hidden initially) -->
         <div id="employee-form-container" style="display: none">
-          <form id="employee-form">
+          <form id="employee-form" class="auth-container">
             <h3 id="form-title">Add Employee</h3>
+            <label for="emp-id">ID:</label>
+            <input type="text" id="emp-id" required />
             <label for="emp-name">Name:</label>
             <input type="text" id="emp-name" required />
-            <!-- Thêm các input khác: department select, salary, etc. -->
+            <label for="emp-department">Department:</label>
+            <input type="text" id="emp-department" required />
+            <label for="emp-position">Position:</label>
+            <input type="text" id="emp-position" required />
+            <label for="emp-salary">Salary:</label>
+            <input type="text" id="emp-salary" required />
             <button type="submit">Save</button>
-            <button type="button" id="cancel-form">Cancel</button>
+            <button type="button" id="cancel-form" class="cancel-button">
+              Cancel
+            </button>
           </form>
         </div>
+
+        <div id="employee-form-edit" style="display: none">
+          <form id="employee-edit" class="auth-container">
+            <h3 id="form-title">Edit Employee</h3>
+            <label for="emp-name-edit">Name:</label>
+            <input type="text" id="emp-name-edit" required />
+            <label for="emp-department-edit">Department:</label>
+            <input type="text" id="emp-department-edit" required />
+            <label for="emp-position-edit">Position:</label>
+            <input type="text" id="emp-position-edit" required />
+            <label for="emp-salary-edit">Salary:</label>
+            <input type="text" id="emp-salary-edit" required />
+            <button type="submit">Save</button>
+            <button type="button" id="cancel-form" class="cancel-button">
+              Cancel
+            </button>
+          </form>
+        </div>
+
       </main>
     </div>
 
